@@ -35,8 +35,8 @@ class HopOnBloonsWhen : Plugin() {
             val message = Message(this)
             if (CoreUser(message.author).id == StoreStream.getUsers().me.id) return@subscribe
             val content = message.content.lowercase()
-            if (content.contains("hop on bloons") || content.contains("get on bloons") ||
-                content.contains("com.ninjakiwi.bloonstd6")
+            if (content.contains("hop on chess") || content.contains("get on chess") ||
+                content.contains("com.chess") || content.contains ("chess.com") || content.contains("chess")
             ) {
                 hopOnBloons()
             }
@@ -46,7 +46,7 @@ class HopOnBloonsWhen : Plugin() {
     private fun hopOnBloons() {
         try {
             val bloons =
-                Utils.appContext.packageManager.getLaunchIntentForPackage("com.ninjakiwi.bloonstd6")
+                Utils.appContext.packageManager.getLaunchIntentForPackage("com.chess")
             Utils.appContext.startActivity(bloons)
         } catch (ignored: Throwable) {
             // nop nop nop nop
